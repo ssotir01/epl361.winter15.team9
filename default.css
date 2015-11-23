@@ -1,4 +1,4 @@
-	html, body
+﻿	html, body
 	{
 		height: 100%;
 	}
@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #2056ac;
+		background: #FF7F27;
 		font-family: 'Questrial', sans-serif;
 		font-size: 12pt;
 		color: rgba(0,0,0,.6);
@@ -179,18 +179,18 @@
 		margin: 0 0 3em 0;
 	}
 	
-	.image-left
-	{
-		float: left;
-		margin: 0 2em 2em 0;
-	}
-	
 	.image-centered
 	{
 		display: block;
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
+	}
+		.image-right
+	{
+		display: block;
+		margin: 0 0 0 0;
 	}
 	
+
 	.image-centered img
 	{
 		margin: 0 auto;
@@ -309,12 +309,14 @@
 	#header-wrapper
 	{
 		overflow: hidden;
-		background: #2056ac;
+		background: #FF7F27;
+		width:100%
 	}
 
 	#header
 	{
 		text-align: center;
+		
 	}
 
 /*********************************************************************************/
@@ -423,13 +425,13 @@
 
 	#wrapper1
 	{
-		background: #FFF;
+		background: #FF7F27;
 	}
 
 	#wrapper2
 	{
 		overflow: hidden;
-		background: #F3F3F3;
+		background: #FF7F27;
 		padding: 5em 0em;
 		text-align: center;
 	}
@@ -449,8 +451,7 @@
 	#welcome
 	{
 		overflow: hidden;
-		width: 1000px;
-		padding: 6em 100px 0em 100px;
+		width: 100%;
 		text-align: center;
 	}
 	
@@ -514,7 +515,7 @@
 	{
 		overflow: hidden;
 		padding: 5em 0em;
-		background: #E3F0F7;
+		background: #FF7F27;
 		text-align: center;
 	}
 
@@ -552,6 +553,7 @@
 		padding: 5em 0em;
 		border-top: 20px solid rgba(255,255,255,0.08);
 		text-align: center;
+		background:#EE8006
 	}
 	
 	#copyright p
@@ -752,5 +754,9 @@
 		text-align: center;
 		color: #FFFFFF;
 	}
+	
+	.newStyle1 {
+	right: 64px;
+}
 	
 	
