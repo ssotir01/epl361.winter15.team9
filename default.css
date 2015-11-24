@@ -371,7 +371,6 @@
 	#menu ul
 	{
 		display: inline-block;
-		padding: 0em 2em;
 		text-align: center;
 	}
 	
@@ -380,7 +379,7 @@
 		display: inline-block;
 	}
 	
-	#menu li a, #menu li span
+	#menu ul li a, #menu ul li ul a
 	{
 		display: inline-block;
 		padding: 0em 1.5em;
@@ -393,11 +392,20 @@
 		color: #FFF;
 	}
 	
-	#menu li:hover a, #menu li.active a, #menu li.active span
+	#menu ul li:hover a 
 	{
-		background: #FFF;
-		border-radius: 7px 7px 0px 0px;
-		color: #2056ac;
+		background: #FF7F27;		
+		color:#000;
+		visibility: visible;
+		
+	}
+	
+	#menu ul li ul li:hover a
+	{
+	background: #FF7F27;		
+	color:gray;
+	visibility: visible;
+
 	}
 	
 	#menu .current_page_item a
@@ -758,7 +766,29 @@
 		color: #FFFFFF;
 	}
 	
-	.newStyle1 {
+	sub-menu {
+    width:160%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0px;
+  }
+ 
+	sub-menu li {
+	    display:block;
+	    font-size:16px;
+	}
+	 
+	sub-menu li a {
+	    padding:10px 30px;
+	    display:block;
+	}
+	 
+	sub-menu li a:hover, .sub-menu .current-item a {
+	    background:#3e3436;
+	}
+		
+	newStyle1 {
 	right: 64px;
 }
 	
