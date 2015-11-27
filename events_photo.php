@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by TEMPLATED
 http://templated.co
@@ -98,7 +98,25 @@ function logoOnClick(){
 				</a>
 				<br/>
 		<strong>
-			Xristos Menidiatis
+		<?
+		$dbh= mysql_connect('phpmyadmin.in.cs.ucy.ac.cy','essex-db','rTcwNZMnH')
+		or die("Couldn't connect to database.");
+
+		$db = mysql_select_db("essex-db", $dbh) 
+		or die("Couldn't select database.");
+
+		$sql= 'SELECT Name FROM Events WHERE EventID=3';
+		$result = mysql_query($sql) 
+		or die("Something is wrong with your SQL statement.");
+
+		while ($row = mysql_fetch_array($result)) {
+		echo '<h5>';
+		$Name = $row['Name'];
+		echo ' '.$Name.'<br/>';
+	 	echo '</h5>';
+	 	mysql_close($dbh);
+		}
+		?>
 		</strong>
 </td>
 </tr>
