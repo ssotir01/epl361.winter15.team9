@@ -101,7 +101,7 @@ function popup(){
 		$db = mysql_select_db("essex-db", $dbh) 
 		or die("Couldn't select database.");
 
-		$sql= "SELECT Name,Details,DATE_FORMAT(Date_Time, '%a %b %dth %Y at %h:%p') as event_time,Place FROM Events WHERE EventID=$id";
+		$sql= "SELECT Name,Details,DATE_FORMAT(Date_Time, '%a %b %dth %Y at %h:00%p') as event_time,Place FROM Events WHERE EventID=$id";
 		$result = mysql_query($sql) 
 		or die("Something is wrong with your SQL statement.");
 		
@@ -113,8 +113,8 @@ function popup(){
 		echo '</strong>';
 		echo '</span>';
 		echo '<div class="auto-style8" style="height: auto">';
-		echo 'Date&amp;Time:'.$row['event_time'].date("Y/m/d").'</br>';
-		echo 'Place:'.$Place.'</br>'.'</br>';
+		echo 'Date &amp; Time: '.$row['event_time'].date("").'</br>';
+		echo 'Place: '.$Place.'</br>'.'</br>';
 		echo '</div>';
 		echo '<div class="auto-style8" style="height: auto">';
 		echo '<form method="post" style="height: auto">';
@@ -126,9 +126,9 @@ function popup(){
 		echo '</div>';
 		echo '<div class="auto-style5" style="height:auto">';
 		echo '<label id="Label1">';
-		echo '<h5>';
+		echo '<h4>';
 		echo $Details;
-		echo '</h5>';
+		echo '</h4>';
 		echo '</label></div>';
 		echo '</div>';
 	 	mysql_close($dbh);

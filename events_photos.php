@@ -76,7 +76,7 @@ function logoOnClick(){
 						<li style="width:100%"><a href="info_for_freshers.htm" title="" style="width: 100%; padding:inherit">Info for freshers</a></li>
 						<li style="width:100%"><a href="about_university.htm" title="" style="width: 100%; padding:inherit">About University</a></li>
 						<li style="width:100%"><a href="about_essex.htm" title="" style="width: 100%; padding:inherit">About Essex</a></li>
-						<li style="width:100%"><a href="comitee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
+						<li style="width:100%"><a href="committee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
 					</ul>
 					
 					</li>
@@ -114,7 +114,7 @@ function logoOnClick(){
 		echo '</td>';
 		echo '</tr>';
 		$i=0;
-		echo '<table width=100%>';
+		echo '<table width=95% align="center">';
 		while ($row = mysql_fetch_array($result)) {
 			$PHOTOID= $row['PhotoID'];
 			
@@ -126,12 +126,12 @@ function logoOnClick(){
 			//echo '<a  class="fancybox" rel="Xristos Menidiatis" href="images from events/Xristos Menidiatis/4.jpg"  title="">';
 			//echo '<img src="images from events/Xristos Menidiatis/4.jpg" width="200" height="200" alt="" />';
 
-			echo '<a class="fancybox" rel="" href="getImage.php?id_photo=';
+			echo '<a class="fancybox" rel="photos" href="getImage.php?id_photo=';
 			echo $PHOTOID;			
 			echo '" title="">';
-			echo '<img width=100% src="getImage.php?id_photo=';
+			echo '<img width=95% src="getImage.php?id_photo=';
 			echo $PHOTOID;			
-			echo ' width="200" height="200" alt="" />';
+			echo ' width="180" height="250" alt="" />';
 			echo '</a>';
 			echo '</td>';
 			$i=$i+1;
@@ -147,11 +147,9 @@ function logoOnClick(){
 </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){
-$(".fancybox").fancybox();
-
-});
+    $(document).ready(function() {
+     $(".fancybox").fancybox({type : 'image'})
+    });
 </script>
-
 </body>
 </html>

@@ -69,7 +69,7 @@ function logoOnClick(){
 						<li style="width:100%"><a href="info_for_freshers.htm" title="" style="width: 100%; padding:inherit">Info for freshers</a></li>
 						<li style="width:100%"><a href="about_university.htm" title="" style="width: 100%; padding:inherit">About University</a></li>
 						<li style="width:100%"><a href="about_essex.htm" title="" style="width: 100%; padding:inherit">About Essex</a></li>
-						<li style="width:100%"><a href="comitee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
+						<li style="width:100%"><a href="committee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
 					</ul>
 					
 					</li>
@@ -101,21 +101,25 @@ function logoOnClick(){
 
 		$i=0;
 		while ($row = mysql_fetch_array($result)) {
+			$Name = $row['Event_name'];
 			if ($i%7==0){
 				echo '<tr>';
 			}
 			echo '<td class="auto-style9" style="height: 200px  ; width:150px ">';
 			
-
-			echo '<img src="images/Free-Folder-icon-PSD-PSD-Freebie.jpg"width="170" height="120" alt="" style="float: left ;align:center " />';
-			echo '<strong>';
-
-			echo '<h5>';
-			$Name = $row['Event_name'];
 			echo '<a href="events_photos.php?event_name=';
 			echo $Name;
 			echo '">';
-						echo ' '.$Name.'<br/>';
+			echo '<img src="images/Free-Folder-icon-PSD-PSD-Freebie.jpg"width="170" height="120" alt="" style="float: left ;align:center " />';
+			echo '</a>';
+			echo '<strong>';
+
+			echo '<h5>';
+			
+			echo '<a href="events_photos.php?event_name=';
+			echo $Name;
+			echo '">';
+			echo ' '.$Name.'<br/>';
 			echo '	</a><br />';
 
 	 		echo '</h5>';

@@ -90,7 +90,7 @@ function popup(){
 						<li style="width:100%"><a href="info_for_freshers.htm" title="" style="width: 100%; padding:inherit">Info for freshers</a></li>
 						<li style="width:100%"><a href="about_university.htm" title="" style="width: 100%; padding:inherit">About University</a></li>
 						<li style="width:100%"><a href="about_essex.htm" title="" style="width: 100%; padding:inherit">About Essex</a></li>
-						<li style="width:100%"><a href="comitee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
+						<li style="width:100%"><a href="committee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
 					</ul>
 					
 					</li>
@@ -137,13 +137,17 @@ function popup(){
 		echo '<td class="auto-style8" style="width:25%; height:auto"><a href="simple_event.php?event_id=';
 		echo $id;
 		echo '" style="color:black">';
-			echo $Name;
+		echo '<h3>';
+		echo $Name;
+		echo '</h3>';
 		echo '	</a><br />';
-		echo "<img   onclick="location.href='simple_event.php?event_id=";
+		echo '<a href="simple_event.php?event_id=';
 		echo $id;
-		echo ''" alt="" width="250" height="250" src="getImage2.php?event_id=';
+		echo '">';
+		echo ' <img width="250" height="250" src="getImage2.php?event_id=';
 		echo $id;
-		echo '"/>';
+		echo '" />';
+		echo '</a>';
 		echo '</td>';
 		$i=$i+1;
 		if($i%4==0){

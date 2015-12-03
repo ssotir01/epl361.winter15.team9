@@ -76,11 +76,11 @@ function logoOnClick(){
 						<li style="width:100%"><a href="info_for_freshers.htm" title="" style="width: 100%; padding:inherit">Info for freshers</a></li>
 						<li style="width:100%"><a href="about_university.htm" title="" style="width: 100%; padding:inherit">About University</a></li>
 						<li style="width:100%"><a href="about_essex.htm" title="" style="width: 100%; padding:inherit">About Essex</a></li>
-						<li style="width:100%"><a href="comitee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
+						<li style="width:100%"><a href="committee.htm" title="" style="width: 100%; padding:inherit">Committee</a></li>
 					</ul>
 					
 					</li>
-				<li><a href="announcements.php" accesskey="5" title="" style="width: auto">Announcments</a></li>
+				<li><a href="announcements.php" accesskey="5" title="" style="width: auto">Announcements</a></li>
 				<li><a href="related_links.htm" title="" style="width: auto">Related Links</a></li>
 				<li><a href="Events.php" accesskey="6" title="" style="width: auto">Events</a></li>
 				<li><a href="events_photo_menu.php" accesskey="7" title="" style="width: auto">Events photos</a></li>
@@ -91,19 +91,12 @@ function logoOnClick(){
 </div>
 
 
-<div class="wrapper " style="background-image:url('image2.jpg')"padding-left:20%;padding-right:20%;">
+<div class="wrapper " padding-left:20%;padding-right:20%;">
 	<div class="subtitle">
 	</div>
 		
     
 	
-	<table border=1 align="center" width=80% bgcolor="#FC8737">
-	  	<tr>
-		    <td width=100 class="auto-style11"><h3 class="auto-style10">Title</h3></td>
-		    <td width=1000><h3 class="auto-style10" align="center">Announcement</h3></td>
-		    <td width=100><h3 class="auto-style10">Published on</h3></td>
-	  	
-	  	</tr>
 	  	
 	  	<?php
 
@@ -113,47 +106,56 @@ function logoOnClick(){
 		$db = mysql_select_db("essex-db", $dbh) 
 		or die("Couldn't select database.");
 
-		$sql= 'SELECT Title,Date,Description FROM Annoucments';
+		$sql= 'SELECT Title,Date,Description FROM Annoucments ORDER BY Date DESC';
 		$result = mysql_query($sql) 
 		or die("Something is wrong with your SQL statement.");
 
+		echo '<table border=1 align="center" width=80% bgcolor="#FC8737"  >';
+	  	echo '<tr>';
+	  		echo '<font color="#84847E">';
+		    echo '<td width=85% class="auto-style11 align="center"  style="font-family:"Gill Sans MT""><h1 class="auto-style10"  align="center">Announcements</h3></td>';
+		    echo '<td width=15%><h3 class="auto-style10" align="center">Published on</h1></td>';
+	  		echo '</font>';
+	  	echo '</tr>';
+
 		$i=0;
-		echo '<table border=1 bgcolor="#FC8737" width=80% align=center>';
 		while ($row = mysql_fetch_array($result)) {
 			$Title=$row['Title'];
 			$Description = $row['Description'];
 			$Date = $row['Date'];
-			echo '<td width=100>';
-			echo '<h5>';
+			echo '<tr width=100%>';
+			echo '<td width=85% >';
+			echo '<h2 >';
+			echo '<font color="#59594E">';
 			echo '<b>';
 			echo $Title;
 			echo  '</b>';
-			echo  '</h5>';
-			echo  '</td>';
-
-			echo '<td width=1000>';
+			echo '</font>';
+			echo  '</h2>';
 			echo '<h5>';
 			echo $Description ;
 			echo '</h5>';
-			echo '</td>';
 			
-			echo '<td width=100>';
+			echo '<td width=15% align="center">';
+			echo '<font color="#59594E">';
 			echo '<h5>';
 			echo $Date;
 			echo '</h5>';
+			echo '</font>';
 			echo '</td>';
 			echo '</tr>';
 			
 		}
-		echo '</table>';
+		echo '<!-- /table -->';
 	 	mysql_close($dbh);
+	 	echo '</table>';
 		?>
 
 
 	  	
 	  	  		  	
 	  	  
-	</table>
+
 		
 
 
